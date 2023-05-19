@@ -24,7 +24,11 @@ public class CustomerController {
     }
 
     @PostMapping("/")
-    public UUID saveCustomer(Customer customer) {
+    public UUID saveCustomer(@RequestBody CustomerInput customerInput) {
+        Customer customer = new Customer();
+        customer.setFirstName(customerInput.getFirstName());
+        customer.setLastName(customerInput.getLastName());
+        customer.setCity(customerInput.getCity());
         return customerService.saveCustomer(customer);
     }
 

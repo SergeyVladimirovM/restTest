@@ -1,0 +1,20 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+   http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+<changeSet id="create_table_shopping_cart" author="liquibase">
+    <createTable tableName="shopping_cart">
+        <column name="customer_id" type="uuid">
+            <constraints references="customer(id)" foreignKeyName="fk_shopping_cart_customer"/>
+        </column>
+        <column name="product_id" type="serial">
+            <constraints references="product(id)" foreignKeyName="fk_shopping_cart_product"/>
+        </column>
+    </createTable>
+</changeSet>
+</databaseChangeLog>
