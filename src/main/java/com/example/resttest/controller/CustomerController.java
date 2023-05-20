@@ -37,7 +37,7 @@ public class CustomerController {
         return customerService.findCustomerById(id);
     }
 
-    @PostMapping("/by_first_name_last_name")
+    @PostMapping("/by-first-name-last-name")
     public Customer getCustomerByFirstNameAndLastName(@RequestBody CustomerInput customerInput) {
         return customerService.findCustomerByFirstNameAndLastName(
                 customerInput.getFirstName(),
@@ -45,7 +45,7 @@ public class CustomerController {
         );
     }
 
-    @PostMapping("/by_last_name_city")
+    @PostMapping("/by-last-name-city")
     public Customer getCustomerByLastNameAndCity(@RequestBody CustomerInput customerInput) {
         return customerService.findCustomerByLastNameAndCity(
                 customerInput.getLastName(),
@@ -53,7 +53,7 @@ public class CustomerController {
         );
     }
 
-    @PostMapping("/by_first_name_last_name_city")
+    @PostMapping("/by-first-name-last-name-city")
     public Customer getCustomerByFirstNameAndLastNameAndCity(@RequestBody CustomerInput customerInput) {
         return customerService.findCustomerByFirstNameAndLastNameAndCity(
                 customerInput.getFirstName(),

@@ -22,7 +22,6 @@ public class Customer {
     @Column(name = "city")
     private String city;
 
-    @JsonIgnore
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "shopping_cart",
